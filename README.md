@@ -9,3 +9,9 @@ same time.
 
 The main goal is to predict the consignment pricing based on the available factors in the
 dataset.
+
+# Input Page
+![Input_Page](https://user-images.githubusercontent.com/78301614/136367138-4edf7319-6567-4856-81a4-defa1b03e214.png)
+
+# Output Page
+![O1](https://user-images.githubusercontent.com/78301614/136367310-d2392cd9-eb73-45a7-9acd-a7061a6e40bd.png)
