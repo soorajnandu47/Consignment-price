@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+
+<nav class="navbar navbar-dark bg-dark navbar-fixed-top">
+    <a class="navbar-brand" href="#">Logistics Price Prediction</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<body>
+
+<div class="container-fluid">
+        <div class="col-lg-12">
+                <form action="{{ url_for('result') }}" method="post">
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Country">Country</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <select id="Country" name="Country" >
+                                    <option value="0">Afghanistan</option>
+                                    <option value="1">Angola</option>
+                                    <option value="2">Belize</option>
+                                    <option value="3">Benin</option>
+                                    <option value="4">Botswana</option>
+                                    <option value="5">Burkina Faso</option>
+                                    <option value="6">Burundi</option>
+                                    <option value="7">Cameroon</option>
+                                    <option value="8">Congo, DRC</option>
+                                    <option value="9">Côte d'Ivoire</option>
+                                    <option value="10">Dominican Republic</option>
+                                    <option value="11">Ethiopia</option>
+                                    <option value="12">Ghana</option>
+                                    <option value="13">Guatemala</option>
+                                    <option value="14">Guinea</option>
+                                    <option value="15">Guyana</option>
+                                    <option value="16">Haiti</option>
+                                    <option value="17">Kazakhstan</option>
+                                    <option value="18">Kenya</option>
+                                    <option value="19">Kyrgyzstan</option>
+                                    <option value="20">Lebanon</option>
+                                    <option value="21">Lesotho</option>
+                                    <option value="22">Liberia</option>
+                                    <option value="23">Libya</option>
+                                    <option value="24">Malawi</option>
+                                    <option value="25">Mali</option>
+                                    <option value="26">Mozambique</option>
+                                    <option value="27">Namibia</option>
+                                    <option value="28">Nigeria</option>
+                                    <option value="29">Pakistan</option>
+                                    <option value="30">Rwanda</option>
+                                    <option value="31">Senegal</option>
+                                    <option value="32">Sierra Leone'</option>
+                                    <option value="33">South Africa</option>
+                                    <option value="34">South Sudan</option>
+                                    <option value="35">Sudan</option>
+                                    <option value="36">Swaziland</option>
+                                    <option value="37">Tanzania</option>
+                                    <option value="38">Togo</option>
+                                    <option value="39">Uganda</option>
+                                    <option value="40">Vietnam</option>
+                                    <option value="41">Zambia</option>
+                                    <option value="42">Zimbabwe</option>
+                                </select>
+
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="shipment_Mode">shipment_Mode</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <select id="shipment_Mode" name="shipment_Mode" >
+                                    <option value="0">Air</option>
+                                    <option value="1">Air Charter</option>
+                                    <option value="2">Ocean</option>
+                                    <option value="3">Truck</option>
+
+                                </select>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="item_description">item_description</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <select id="item_description" name="item_description" >
+                                    <option value="0">Ampules</option>
+                                    <option value="1">Bottled medicine</option>
+                                    <option value="2">Capsule</option>
+                                    <option value="3">Oral powder</option>
+                                    <option value="4">Tablets</option>
+                                    <option value="5">Test kits</option>
+                                    <option value="6">Vial</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Brand">Brand</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <select id="Brand" name="Brand" >
+                                    <option value="0">Aluvia</option>
+                                     <option value="1">Atripla</option>
+                                     <option value="2">Bioline</option>
+                                     <option value="3">Bundi</option>
+                                     <option value="4">Capillus</option>
+                                     <option value="5">CareStart</option>
+                                     <option value="6">Clearview</option>
+                                     <option value="7">Coartem</option>
+                                     <option value="8">Colloidal Gold</option>
+                                     <option value="9">Combivir</option>
+                                     <option value="10">Crixivan</option>
+                                     <option value="11">Determine</option>
+                                     <option value="12">DoubleCheck</option>
+                                     <option value="13">Epivir</option>
+                                     <option value="14">First Response</option>
+                                     <option value="15">Generic</option>
+                                     <option value="16">Genie</option>
+                                     <option value="17">Hexagon</option>
+                                     <option value="18">INSTi</option>
+                                     <option value="19">ImmunoComb</option>
+                                     <option value="20">InstantCHEK</option>
+                                     <option value="21">Intelence</option>
+                                     <option value="22">Invirase</option>
+                                     <option value="23">Isentress</option>
+                                     <option value="24">Kaletra</option>
+                                     <option value="25">LAV</option>
+                                     <option value="26">Multispot</option>
+                                     <option value="27">Norvir</option>
+                                     <option value="28">OraQuick</option>
+                                     <option value="29">Paramax</option>
+                                     <option value="30">Pepti-LAV</option>
+                                     <option value="31">Prezista</option>
+                                     <option value="32">Retrovir</option>
+                                     <option value="33">Reveal</option>
+                                     <option value="34">Reyataz</option>
+                                     <option value="35">Stat-Pak</option>
+                                     <option value="36">Stocrin/Sustiva</option>
+                                     <option value="37">Trizivir</option>
+                                     <option value="38">Truvada</option>
+                                     <option value="39">Uni-Gold</option>
+                                     <option value="40">Videx</option>
+                                     <option value="41">Videx EC</option>
+                                     <option value="42">Viracept</option>
+                                     <option value="43">Viramune</option>
+                                     <option value="44">Viread</option>
+                                     <option value="45">Visitect</option>
+                                    <option value="46">Zerit</option>
+                                    <option value="47">Ziagen</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Unit_measure">Unit_measure</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="Unit_measure" name="Unit_measure" placeholder="Unit of Measure in a pack">
+
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="line_Item_Quantity">line_Item_Quantity</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="line_Item_Quantity" name="line_Item_Quantity" placeholder="Quantities of items in a line">
+
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="manufacturing_Site">manufacturing_Site</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <select id="manufacturing_Site" name="manufacturing_Site">
+                                    <option value="0">Australia</option>
+                                    <option value="1">Canada</option>
+                                    <option value="2">China</option>
+                                    <option value="3">Cyprus</option>
+                                    <option value="4">France</option>
+                                    <option value="5">Germany</option>
+                                    <option value="6">Greece</option>
+                                    <option value="7">India</option>
+                                    <option value="8">Ireland</option>
+                                    <option value="9">Italy</option>
+                                    <option value="10">Japan</option>
+                                    <option value="11">Korea</option>
+                                    <option value="12">Netherlands</option>
+                                    <option value="13">Nigeria</option>
+                                    <option value="14">Norway</option>
+                                    <option value="15">Not Applicable</option>
+                                    <option value="16">Poland</option>
+                                    <option value="17">South Africa</option>
+                                    <option value="18">Spain</option>
+                                    <option value="19">Switzerland</option>
+                                    <option value="20">Thailand</option>
+                                    <option value="21">UK</option>
+                                    <option value="22">UNKNOWN</option>
+                                    <option value="23">US</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+			<br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="first_Line_Designation">first_Line_Designation</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <select id="first_Line_Designation" name="first_Line_Designation">
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+			<br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="weight_in_kg">weight_in_kg</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="weight_in_kg" name="weight_in_kg" placeholder="Weight in Kg">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Insurance_amount">Insurance_amount</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="Insurance_amount" name="Insurance_amount" placeholder="Insuarance Amount">
+                            </div>
+                        </div>
+                        <br>
+                        <center>
+                            <button type="submit" class="btn btn-dark" value="submit">Submit</button>
+                        </center>
+                </form>
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<style>
+body {
+    background-color: #626269;
+}
+
+.col-lg-4 {
+    color: #ffffff;
+}
+</style>
+
+</html>
